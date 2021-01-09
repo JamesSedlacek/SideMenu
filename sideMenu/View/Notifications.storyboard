@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AqR-T3-ZB3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ContainerVC-->
+        <scene sceneID="Vy9-TV-Lmc">
+            <objects>
+                <viewController id="AqR-T3-ZB3" customClass="ContainerVC" customModule="sideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dWI-hX-St2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjg-Xz-was">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="YoH-MN-e63"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="pGM-ev-lDc" kind="embed" identifier="segueToNav" id="glp-pN-4OY"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXt-9g-Ulz">
+                                <rect key="frame" x="-260" y="0.0" width="260" height="896"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="a94-VX-Yjm"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="FYJ-Ll-IUG" kind="embed" identifier="SegueToMenu" id="rjq-U5-WrV"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ovL-zI-RyX"/>
+                        <color key="backgroundColor" name="MenuColor"/>
+                        <constraints>
+                            <constraint firstItem="nXt-9g-Ulz" firstAttribute="top" secondItem="dWI-hX-St2" secondAttribute="top" id="7pZ-l7-c5c"/>
+                            <constraint firstItem="nXt-9g-Ulz" firstAttribute="leading" secondItem="dWI-hX-St2" secondAttribute="leading" constant="-260" id="L0f-yD-92w"/>
+                            <constraint firstAttribute="bottom" secondItem="nXt-9g-Ulz" secondAttribute="bottom" id="ZVd-Lw-ntn"/>
+                            <constraint firstItem="hjg-Xz-was" firstAttribute="top" secondItem="dWI-hX-St2" secondAttribute="top" id="dpn-PQ-Bag"/>
+                            <constraint firstItem="hjg-Xz-was" firstAttribute="leading" secondItem="nXt-9g-Ulz" secondAttribute="trailing" id="s24-hK-l8L"/>
+                            <constraint firstAttribute="bottom" secondItem="hjg-Xz-was" secondAttribute="bottom" id="tSq-ge-ysS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerWidth" destination="YoH-MN-e63" id="uBe-2u-OJW"/>
+                        <outlet property="menuLeadingConstraint" destination="L0f-yD-92w" id="Zgq-U5-BEE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05i-vx-UsE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
+        </scene>
+        <!--Side MenuVC-->
+        <scene sceneID="byl-iP-lFH">
+            <objects>
+                <tableViewController id="FYJ-Ll-IUG" customClass="SideMenuVC" customModule="sideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="vYx-na-uPG">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="MenuColor"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="Zga-OK-b54">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="70" id="a1L-kG-Ame">
+                                        <rect key="frame" x="0.0" y="18" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1L-kG-Ame" id="txV-42-0tC">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKo-qK-mB5">
+                                                    <rect key="frame" x="31" y="17.5" width="30" height="34.5"/>
+                                                    <color key="tintColor" name="MenuItemColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="y9V-ug-LLB"/>
+                                                        <constraint firstAttribute="height" constant="30" id="yDg-as-4so"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJJ-jt-7my">
+                                                    <rect key="frame" x="76" y="22" width="60" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" name="MenuItemColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OKo-qK-mB5" firstAttribute="centerY" secondItem="txV-42-0tC" secondAttribute="centerY" id="7hD-5d-H6O"/>
+                                                <constraint firstItem="VJJ-jt-7my" firstAttribute="centerY" secondItem="txV-42-0tC" secondAttribute="centerY" id="H24-uD-FYH"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VJJ-jt-7my" secondAttribute="trailing" constant="20" symbolic="YES" id="Ica-xy-rMA"/>
+                                                <constraint firstItem="VJJ-jt-7my" firstAttribute="leading" secondItem="OKo-qK-mB5" secondAttribute="trailing" constant="15" id="pCd-hb-5ic"/>
+                                                <constraint firstItem="OKo-qK-mB5" firstAttribute="leading" secondItem="txV-42-0tC" secondAttribute="leadingMargin" constant="15" id="qVI-P1-Rd6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MenuColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="70" id="qSa-DL-qUP">
+                                        <rect key="frame" x="0.0" y="88" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qSa-DL-qUP" id="vC3-K6-D3D">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBx-kI-PhV">
+                                                    <rect key="frame" x="76" y="22" width="127.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" name="MenuItemColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C5A-Zs-etI">
+                                                    <rect key="frame" x="31" y="20.5" width="30" height="29.5"/>
+                                                    <color key="tintColor" name="MenuItemColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="3mU-JE-0o6"/>
+                                                        <constraint firstAttribute="width" constant="30" id="omc-ke-dEW"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C5A-Zs-etI" firstAttribute="leading" secondItem="vC3-K6-D3D" secondAttribute="leadingMargin" constant="15" id="07J-K9-SIH"/>
+                                                <constraint firstItem="C5A-Zs-etI" firstAttribute="centerY" secondItem="vC3-K6-D3D" secondAttribute="centerY" id="91P-OU-eHg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZBx-kI-PhV" secondAttribute="trailing" constant="20" symbolic="YES" id="X75-9c-Cbx"/>
+                                                <constraint firstItem="ZBx-kI-PhV" firstAttribute="centerY" secondItem="vC3-K6-D3D" secondAttribute="centerY" id="nLy-Fb-fCi"/>
+                                                <constraint firstItem="ZBx-kI-PhV" firstAttribute="leading" secondItem="C5A-Zs-etI" secondAttribute="trailing" constant="15" id="r7u-bg-S6D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MenuColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="70" id="tNT-dn-iWE">
+                                        <rect key="frame" x="0.0" y="158" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tNT-dn-iWE" id="OyK-GQ-Z5A">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doz-Pv-BrM">
+                                                    <rect key="frame" x="76" y="22" width="83.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" name="MenuItemColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cvy-Pl-bSc">
+                                                    <rect key="frame" x="31" y="20" width="30" height="30.5"/>
+                                                    <color key="tintColor" name="MenuItemColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="RUc-LN-qBL"/>
+                                                        <constraint firstAttribute="width" constant="30" id="n9l-yV-I6e"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="doz-Pv-BrM" firstAttribute="leading" secondItem="cvy-Pl-bSc" secondAttribute="trailing" constant="15" id="09J-5u-O9r"/>
+                                                <constraint firstItem="cvy-Pl-bSc" firstAttribute="centerY" secondItem="OyK-GQ-Z5A" secondAttribute="centerY" id="1wF-OK-jQh"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="doz-Pv-BrM" secondAttribute="trailing" constant="20" symbolic="YES" id="98K-lQ-tgh"/>
+                                                <constraint firstItem="cvy-Pl-bSc" firstAttribute="leading" secondItem="OyK-GQ-Z5A" secondAttribute="leadingMargin" constant="15" id="D9s-8W-Fa4"/>
+                                                <constraint firstItem="doz-Pv-BrM" firstAttribute="centerY" secondItem="OyK-GQ-Z5A" secondAttribute="centerY" id="Yt1-iQ-WGC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MenuColor"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="70" id="VM7-LN-Yzc">
+                                        <rect key="frame" x="0.0" y="228" width="260" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VM7-LN-Yzc" id="1cB-0y-35n">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRJ-cY-PVd">
+                                                    <rect key="frame" x="76" y="22" width="61" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" name="MenuItemColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-Di-v3R">
+                                                    <rect key="frame" x="31" y="20.5" width="30" height="29"/>
+                                                    <color key="tintColor" name="MenuItemColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="N08-OH-UBU"/>
+                                                        <constraint firstAttribute="width" constant="30" id="nJS-1R-N0c"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KRJ-cY-PVd" firstAttribute="centerY" secondItem="1cB-0y-35n" secondAttribute="centerY" id="1gP-rH-6nZ"/>
+                                                <constraint firstItem="oRD-Di-v3R" firstAttribute="leading" secondItem="1cB-0y-35n" secondAttribute="leadingMargin" constant="15" id="3FX-py-rtg"/>
+                                                <constraint firstItem="KRJ-cY-PVd" firstAttribute="leading" secondItem="oRD-Di-v3R" secondAttribute="trailing" constant="15" id="MQW-XG-bG3"/>
+                                                <constraint firstItem="oRD-Di-v3R" firstAttribute="centerY" secondItem="1cB-0y-35n" secondAttribute="centerY" id="gbv-rt-qMW"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KRJ-cY-PVd" secondAttribute="trailing" constant="20" symbolic="YES" id="ydj-iY-7Nd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="MenuColor"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FYJ-Ll-IUG" id="i9d-a5-HZ6"/>
+                            <outlet property="delegate" destination="FYJ-Ll-IUG" id="lce-Q4-L1y"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ikr-tg-gdq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="129"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="lCZ-Ho-6mO">
+            <objects>
+                <viewController id="6EY-Kt-wdc" customClass="NotificationsVC" customModule="sideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FEc-7c-VYA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit the Notification Bell!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk0-ZR-zQC">
+                                <rect key="frame" x="32" y="400.5" width="350" height="95.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Hl8-iq-urH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SYR-xb-eXO"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="mk0-ZR-zQC" firstAttribute="centerY" secondItem="FEc-7c-VYA" secondAttribute="centerY" id="YhV-aP-qM1"/>
+                            <constraint firstItem="mk0-ZR-zQC" firstAttribute="centerX" secondItem="FEc-7c-VYA" secondAttribute="centerX" id="hn4-Wi-zEM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notifications" id="Vg6-mU-Ob8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="Uf0-YW-eeu">
+                            <connections>
+                                <action selector="menuButtonTapped:" destination="6EY-Kt-wdc" id="CLM-64-tnr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="i6b-9R-BSs" kind="presentation" identifier="showHome" customClass="customSegue" customModule="sideMenu" customModuleProvider="target" modalPresentationStyle="fullScreen" id="T8A-7D-qXS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dj5-H0-3d2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="855.80357142857144"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="N1z-Vt-mY9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="i6b-9R-BSs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9b-25-Xd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tY5-lM-XIO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pGM-ev-lDc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CXs-x5-CQA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6EY-Kt-wdc" kind="relationship" relationship="rootViewController" id="Qzw-2o-Q9x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sv9-aI-eCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="856.47321428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <namedColor name="MenuColor">
+            <color red="0.52600002288818359" green="0.52300000190734863" blue="0.52799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MenuItemColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
